@@ -3,12 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Launch from './pages/Launch';
 import Login from './pages/user/Login';
 import Dashboard from './pages/user/Dashboard';
-
-const AdminLogin = () => (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <h1 className="text-2xl font-bold text-indigo-600">Admin Login Page Coming Soon...</h1>
-    </div>
-);
+import AdminLogin from './pages/admin/AdminLogin';
 
 function App() {
     return (
@@ -18,7 +13,7 @@ function App() {
                     <Route path="/" element={<Launch />} />
                     <Route path="/user/login" element={<Login />} />
                     <Route path="/user/dashboard" element={<Dashboard />} />
-                    <Route path="/admin-login" element={<AdminLogin />} />
+                    <Route path="/admin/login" element={<AdminLogin />} />
                 </Routes>
             </div>
         </Router>
