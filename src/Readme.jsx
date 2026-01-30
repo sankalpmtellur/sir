@@ -1,149 +1,216 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { 
-  ArrowLeft, 
-  Target, 
-  Zap, 
-  ShieldCheck, 
-  BarChart3, 
-  FileText,
-  MousePointer2
-} from "lucide-react";
+import { ArrowLeft, Zap, ShieldCheck, Code2, Layers } from "lucide-react";
 import logo from "./assets/logo.png";
 
 const Readme = () => {
   const navigate = useNavigate();
-  const primaryColor = "#DD5626"; // Staff Orange
-  const secondaryColor = "#C21F3A"; // Admin Red
+  const staffOrange = "#DD5626";
+  const adminRed = "#C21F3A";
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-orange-100 selection:text-orange-900">
-      
-      {/* MINIMAL NAVIGATION */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100 px-10 py-5 flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <img src={logo} alt="RU" className="h-9 w-auto" />
-          <div className="h-5 w-[1px] bg-slate-200" />
-          <div className="flex flex-col">
-            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 leading-none">System Doc</span>
-            <span className="text-xs font-bold text-slate-900 uppercase">v1.0.4</span>
-          </div>
-        </div>
-        <button 
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-orange-100">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md px-12 py-8 flex justify-between items-center border-b border-slate-50">
+        <img src={logo} alt="RU" className="h-7 w-auto" />
+        <button
           onClick={() => navigate("/")}
-          className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-slate-900 transition-all group"
+          className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 hover:text-orange-600 transition-all group"
         >
-          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          Exit to Portal
+          <ArrowLeft
+            size={14}
+            className="group-hover:-translate-x-1 transition-transform"
+          />
+          Exit Portal
         </button>
       </nav>
 
-      <main className="pt-32 pb-24">
-        <div className="max-w-6xl mx-auto px-10">
-          
-          {/* HERO SECTION: IMPACTFUL & CLEAN */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }} 
-              animate={{ opacity: 1, x: 0 }}
-            >
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-[2px] bg-orange-500" />
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-500">The Vision</span>
-              </div>
-              <h1 className="text-7xl font-black tracking-tighter leading-[0.85] uppercase italic text-slate-900 mb-8">
-                Sports In <br />
-                <span style={{ color: primaryColor }}>Rishihood</span>
-              </h1>
-              <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-md">
-                A unified intelligence system bridging the gap between athletic spirit and administrative precision.
-              </p>
-            </motion.div>
+      <main className="pt-44 pb-32 max-w-6xl mx-auto px-10">
+        <section className="mb-40">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="relative"
+          >
+            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-orange-600 mb-6 block">
+              University Athletics Portal
+            </span>
+            <h1 className="text-[10vw] lg:text-9xl font-black tracking-tighter uppercase italic leading-[0.75] mb-16">
+              Sports In <br />
+              <span style={{ color: staffOrange }}>Rishihood</span>
+            </h1>
 
-            <div className="relative">
-              <div className="bg-slate-900 rounded-[3rem] p-12 text-white shadow-2xl relative z-10">
-                <FileText className="text-orange-500 mb-8" size={40} />
-                <h3 className="text-2xl font-black uppercase tracking-tight mb-4 italic">Core Objective</h3>
-                <p className="text-slate-400 font-medium leading-relaxed mb-8">
-                  To eliminate the friction of manual logistics, allowing our athletes to focus on what truly matters: <span className="text-white">Performance and Growth.</span>
+            <div className="flex flex-wrap gap-20 py-10 border-y border-slate-100">
+              <div className="space-y-2">
+                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 flex items-center gap-2">
+                  <Code2 size={12} className="text-orange-500" /> Lead Developer
                 </p>
-                <div className="flex items-center gap-3 py-4 border-t border-white/10">
-                  <MousePointer2 size={14} className="text-orange-500" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 text-center">Interactive Management Interface</span>
+                <p className="text-xl font-bold tracking-tight text-slate-900">
+                  Sankalp M Tellur
+                </p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 flex items-center gap-2">
+                  <Code2 size={12} className="text-orange-500" /> Lead Developer
+                </p>
+                <p className="text-xl font-bold tracking-tight text-slate-900">
+                  Rishiwant Kumar
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        <section className="mb-40">
+          <div className="grid lg:grid-cols-12 gap-px bg-slate-100 border border-slate-100 rounded-[3rem] overflow-hidden shadow-sm">
+            <div className="lg:col-span-7 bg-white p-12 md:p-20 flex flex-col justify-between relative">
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 mb-12">
+                  <span className="w-10 h-[1px] bg-orange-500" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-600">
+                    Project Mission
+                  </span>
+                </div>
+
+                <h2 className="text-6xl font-black text-slate-900 uppercase italic tracking-tighter leading-[0.9] mb-10">
+                  The <br />
+                  <span style={{ color: staffOrange }}>Objective</span>
+                </h2>
+
+                <p className="text-slate-500 text-2xl leading-relaxed font-medium max-w-xl">
+                  Redefining the{" "}
+                  <span className="text-slate-900">
+                    athletic infrastructure
+                  </span>{" "}
+                  of Rishihood University through a unified, high-fidelity
+                  digital ecosystem.
+                </p>
+              </div>
+
+              <div className="mt-20 flex items-center gap-8">
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                    Status
+                  </span>
+                  <span className="text-xs font-bold text-slate-900 uppercase tracking-tight flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500" />{" "}
+                    Active Deployment
+                  </span>
+                </div>
+                <div className="w-[1px] h-8 bg-slate-100" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                    Region
+                  </span>
+                  <span className="text-xs font-bold text-slate-900 uppercase tracking-tight text-orange-600">
+                    Main Campus / RU
+                  </span>
                 </div>
               </div>
-              {/* Background Decorative Element */}
-              <div className="absolute -top-6 -right-6 w-full h-full border-2 border-slate-100 rounded-[3rem] -z-0" />
+            </div>
+
+            <div className="lg:col-span-5 bg-[#FBFBFB] p-12 md:p-20 flex flex-col justify-center">
+              <div className="space-y-16">
+                {[
+                  {
+                    title: "Asset Integrity",
+                    desc: "Full-lifecycle serialisation and real-time inventory tracking for all sports gear.",
+                    tag: "LOGISTICS",
+                  },
+                  {
+                    title: "Flow Control",
+                    desc: "Dynamic occupancy intelligence and traffic monitoring for facilities.",
+                    tag: "OPERATIONS",
+                  },
+                  {
+                    title: "Strategic Data",
+                    desc: "Automated analytics and reporting to drive long-term university budgeting.",
+                    tag: "ANALYTICS",
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="relative pl-8 border-l-2 border-orange-500 group cursor-default"
+                  >
+                    <div className="absolute -left-[6px] top-0 w-2.5 h-2.5 rounded-full bg-orange-500 shadow-sm" />
+
+                    <span className="text-[8px] font-black text-orange-500 uppercase tracking-[0.2em] mb-2 block">
+                      {item.tag}
+                    </span>
+                    <h4 className="text-lg font-black uppercase tracking-tight text-slate-900 mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-slate-500 font-bold leading-relaxed max-w-xs">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* THE "WHY" SECTION - MODULAR CARDS */}
-          <div className="grid md:grid-cols-3 gap-8 mb-32">
-            <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500">
-              <Target className="text-slate-900 mb-10 group-hover:scale-110 transition-transform" size={32} />
-              <h4 className="text-xl font-black uppercase tracking-tight mb-4">Accountability</h4>
-              <p className="text-sm text-slate-500 font-medium leading-loose">
-                Every piece of equipment is serialized and logged. No more missing gear or untraceable losses.
-              </p>
-            </div>
-
-            <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500">
-              <BarChart3 className="text-slate-900 mb-10 group-hover:scale-110 transition-transform" size={32} />
-              <h4 className="text-xl font-black uppercase tracking-tight mb-4">Analytics</h4>
-              <p className="text-sm text-slate-500 font-medium leading-loose">
-                Data-driven insights help university admins understand peak hours and facility load effortlessly.
-              </p>
-            </div>
-
-            <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500">
-              <Zap className="text-slate-900 mb-10 group-hover:scale-110 transition-transform" size={32} />
-              <h4 className="text-xl font-black uppercase tracking-tight mb-4">Efficiency</h4>
-              <p className="text-sm text-slate-500 font-medium leading-loose">
-                Real-time updates across the gym, pool, and sports room mean zero scheduling conflicts.
-              </p>
-            </div>
+        <section className="mb-20 px-4">
+          <div className="flex flex-col items-center text-center mb-24">
+            <Layers className="text-orange-600 mb-6" size={32} />
+            <h2 className="text-5xl font-black uppercase tracking-tighter italic text-slate-900">
+              The Ecosystem
+            </h2>
+            <p className="text-[10px] font-black uppercase tracking-[0.5em] text-orange-500 mt-4 underline decoration-orange-500 decoration-2 underline-offset-8">
+              Two Interfaces. One Objective.
+            </p>
           </div>
 
-          {/* THE PILLARS SECTION */}
-          <section className="bg-slate-50 rounded-[4rem] p-16 border border-slate-100">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 italic">The Ecosystem</h2>
-              <p className="text-slate-400 font-bold text-[10px] uppercase tracking-[0.4em] mt-2">Two Interfaces. One Goal.</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-10">
-              <div className="bg-white p-12 rounded-[3rem] border border-slate-100 shadow-sm hover:scale-[1.02] transition-transform">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-xl mb-8" style={{ backgroundColor: primaryColor }}>
-                  <Zap size={24} />
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="bg-slate-50 p-12 rounded-[3.5rem] border border-orange-100 flex flex-col justify-between shadow-sm">
+              <div>
+                <div
+                  className="w-16 h-16 rounded-3xl flex items-center justify-center text-white mb-10 shadow-lg"
+                  style={{ backgroundColor: staffOrange }}
+                >
+                  <Zap size={28} />
                 </div>
-                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">Staff Operations</h3>
-                <p className="text-slate-500 font-medium leading-relaxed">
-                  The frontend engine for on-ground execution. Coaches can issue equipment and monitor gym capacity in real-time with zero lag.
+                <h3 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6 italic">
+                  Staff Portal
+                </h3>
+                <p className="text-slate-600 font-medium leading-relaxed text-lg mb-10">
+                  Engineered for on-ground agility. Enables assistants to execute
+                  rapid equipment circulation and real-time capacity management.
                 </p>
               </div>
-
-              <div className="bg-white p-12 rounded-[3rem] border border-slate-100 shadow-sm hover:scale-[1.02] transition-transform">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-xl mb-8" style={{ backgroundColor: secondaryColor }}>
-                  <ShieldCheck size={24} />
-                </div>
-                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">Admin Oversight</h3>
-                <p className="text-slate-500 font-medium leading-relaxed">
-                  The strategic control center. Manage inventory lifecycle, analyze long-term usage trends, and oversee facility maintenance.
-                </p>
+              <div className="pt-8 border-t border-slate-200 flex justify-between items-center">
+                <span className="text-[10px] font-black text-orange-600 uppercase tracking-widest italic">
+                  Operations Engine
+                </span>
+                <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
               </div>
             </div>
-          </section>
 
-          {/* FOOTER FOOTPRINT */}
-          <footer className="mt-32 pt-10 border-t border-slate-100 flex justify-between items-center">
-             <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em]">SIR // RISHIHOOD 2026</span>
-             <div className="flex gap-6">
-                <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest cursor-pointer hover:text-orange-500 transition-colors">Privacy</span>
-                <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest cursor-pointer hover:text-orange-500 transition-colors">Terms</span>
-             </div>
-          </footer>
-        </div>
+            <div className="bg-slate-50 p-12 rounded-[3.5rem] border border-red-100 flex flex-col justify-between shadow-sm">
+              <div>
+                <div
+                  className="w-16 h-16 rounded-3xl flex items-center justify-center text-white mb-10 shadow-lg"
+                  style={{ backgroundColor: adminRed }}
+                >
+                  <ShieldCheck size={28} />
+                </div>
+                <h3 className="text-3xl font-black uppercase tracking-tight text-slate-900 mb-6 italic">
+                  Admin Console
+                </h3>
+                <p className="text-slate-600 font-medium leading-relaxed text-lg mb-10">
+                  The central command unit. Aggregates usage data, manages
+                  global inventory, and oversees facility health analytics.
+                </p>
+              </div>
+              <div className="pt-8 border-t border-slate-200 flex justify-between items-center">
+                <span className="text-[10px] font-black text-red-600 uppercase tracking-widest italic">
+                  Intelligence Hub
+                </span>
+                <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
