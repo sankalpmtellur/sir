@@ -93,7 +93,7 @@ src/
 - The design language intentionally differentiates Staff (orange) vs Admin (red) for clarity.
 - The in‑app README page provides a branded product narrative and should be kept in sync with this file.
 
-## Next Steps (Suggested)
+## Next Steps
 
 - Connect to a real backend for auth and inventory persistence.
 - Replace mock data with API‑driven datasets.
